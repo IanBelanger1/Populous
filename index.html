@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Populous</title>
+  <html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HTML 5 Boilerplate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  
+  
+  
+<style>
+body {
+  background-color: darkslategrey;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.logo {
+  position: relative;
+}
+
+.background {
+  position: absolute;
+  height: 110vh;
+  width: 100vw;
+  overflow-y: scroll;
+  background-image: linear-gradient(darkslategrey, darkslategrey, darkslategrey, #78867b, #d4c7a5);
+
+  transition: 500ms;
+}
+
+.main {
+  left: 10px;
+  height: 110px;
+  width: 55px;
+  z-index: 5;
+  background-color: var(--main);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  transform: scale(0.5);
+  transition: 375ms ease-in-out;
+  cursor: pointer;
+  -webkit-filter: blur(0px);
+  opacity: 1;
+
+  --main: brown;
+}
+
+.B {
+}
+
+.loop {
+  left: 54px;
+  background-color: var(--secondary);
+  height: 55px;
+
+  --secondary: blanchedalmond;
+}
+
+.top {
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 50px;
+}
+
+.mid {
+  position: absolute;
+  height: 10px;
+  width: 32px;
+  z-index: 1;
+  top: 50px;
+  left: 54px;
+}
+
+.bottom {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 40px;
+}
+
+.semi {
+  background-color: var(--main);
+  left: 74px;
+  height: 20px;
+  width: 18px;
+}
+
+.one {
+  bottom: 93px;
+}
+
+.two {
+  bottom: 60px;
+}
+
+.I {
+  width: 16px;
+  left: 20px;
+  background-color: blanchedalmond;
+}
+
+.dot {
+  position: absolute;
+  height: 16px;
+  top: 10px;
+
+  border-radius: 4px;
+}
+
+.line {
+  position: absolute;
+  top: 40px;
+  height: 64px;
+
+  border-radius: 4px;
+}
+
+.gameTitle {
+  position: absolute;
+  width: 0vw;
+  height: 100vh;
+  top: 20%;
+  left: 52%;
+  font-size: 50pt;
+  font-family: "raleway", sans-serif;
+  cursor: pointer;
+}
+
+.pop {
+  position: relative;
+  top: 77px;
+  right: 168px;
+  color: #ae3d3a;
+  font-weight: bold;
+}
+
+.ulous {
+  position: relative;
+  left: -44px;
+  color:  blanchedalmond;
+}
+
+.underline {
+  position: absolute;
+  top: 157px;
+  left: -166px;
+  height: 5px;
+  width: 284px;
+  background-image: linear-gradient(to right, blanchedalmond, brown);
+  transition: transform 800ms ease-in-out;
+
+  transform: scalex(0);
+}
+
+.gameScreen {
+  position: absolute;
+  top: 100vh;
+  height: 100vh;
+  width: 100vw;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  font-family: "raleway", sans-serif;
+}
+
+.choiceOne {
+  position: absolute;
+  height: 100vh;
+  width: 50vw;
+  background-image: linear-gradient(palegoldenrod, olivedrab);
+  box-sizing: border-box;
+  border: 8px blanchedalmond solid;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 10px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryOne {
+  position: absolute;
+  font-size: 50pt;
+  color: blanchedalmond;
+  top: 50px;
+}
+
+.underlineOne {
+  position: absolute;
+  top: 197px;
+  height: 5px;
+  width: 230px;
+  background-image: linear-gradient(to right, brown, brown, brown, blanchedalmond);
+  transition: transform 800ms ease-in-out;
+
+  transform: scalex(0);
+  transform-origin: left;
+}
+
+.populationOne {
+  position: absolute;
+  top: 200px;
+  color: #d5b310;
+  font-size: 38pt;
+  font-weight: bold;
+}
+
+.choiceTwo {
+  position: absolute;
+  left: 50vw;
+  height: 100vh;
+  width: 50vw;
+  background-image: linear-gradient(steelblue, steelblue);
+  border-top-right-radius: 25px;
+  border-top-left-radius: 10px;
+  box-sizing: border-box;
+  border: 8px brown solid;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.countryTwo {
+  position: absolute;
+  font-size: 50pt;
+  color: brown;
+  top: 50px;
+}
+
+.underlineTwo {
+  position: absolute;
+  top: 197px;
+  height: 5px;
+  width: 230px;
+  background-image: linear-gradient(to right, blanchedalmond, blanchedalmond, blanchedalmond, brown);
+  transition: transform 800ms ease-in-out;
+
+  transform: scalex(0);
+  transform-origin: left;
+}
+
+.populationTwo {
+  position: absolute;
+  top: 200px;
+  color: #d5b310;
+  font-size: 38pt;
+  font-weight: bold;
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <div class="background" id="background"></div>
+<a id="portfolioLink" href="https://codepen.io/napkin3/full/dyeQywr">
+  <div class="logo main" id="logo">
+    <section class="I">
+      <div class="I dot"></div>
+      <div class="I line"></div>
+    </section>
+    <section class="B">
+      <div class="logo loop top"></div>
+      <div class="logo loop mid"></div>
+      <div class="logo loop bottom"></div>
+      <div class="logo semi one top"></div>
+      <div class="logo semi two bottom"></div>
+    </section>
+  </div>
+</a>
+<div class="gameTitle" id="gameTitle">
+  <div class="pop" id="pop">Pop</div>
+  <div class="ulous" id="ulous">ulous</div>
+  <div class="underline" id="underline"></div>
+</div>
+<div class="gameScreen" id="gameScreen">
+  <div class="choiceOne" id="choiceOne">
+    <p class="countryOne" id="countryOne">Country</p>
+    <div class="underlineOne" id="underlineOne"></div>
+    <p class="populationOne" id="populationOne">100,000,900</p>
+  </div>
+  <div class="choiceTwo" id="choiceTwo">
+    <p class="countryTwo" id="countryTwo">Country</p>
+    <div class="underlineTwo" id="underlineTwo"></div>
+    <p class="populationTwo">100,000,900</p>
+  </div>
+</div>
+    <script src="index.js"></script>
+  
+  
+      <script id="rendered-js" >
+const logo = document.getElementById("logo");
+const background = document.querySelector(".background");
+const title = document.querySelector("#gameTitle");
+const pop = document.querySelector("#pop");
+const ulous = document.querySelector("#ulous");
+const game = document.querySelector("#gameScreen");
+const portfolio = document.querySelector("#portfolioLink");
+logo.setAttribute("onmouseover", "expand()");
+
+function expand() {
+  logo.style.transform = "translatey(50vh) translatex(44.5vw) scale(3)";
+  logo.setAttribute("onclick", "portfolio()");
+  background.style.webkitFilter = "blur(10px)";
+  title.style.webkitFilter = "blur(10px)";
+  game.style.webkitFilter = "blur(10px)";
+  background.setAttribute("onclick", "contract()");
+  title.setAttribute("onclick", "contract()");
+  game.setAttribute("onclick", "contract()");
+  setTimeout(portfolioLinkDelay, 200);
+}
+
+function portfolioLinkDelay() {
+  portfolio.href = "https://codepen.io/napkin3/full/dyeQywr";
+}
+
+function contract() {
+  logo.style.transform = "translatey(0vh) translatex(0vw) scale(0.5)";
+  logo.setAttribute("onclick", "expand()");
+  background.style.webkitFilter = "blur(0px)";
+  title.style.webkitFilter = "blur(0px)";
+  game.style.webkitFilter = "blur(0px)";
+  background.onclick = "";
+  title.onclick = "";
+  game.onclick = "";
+  portfolio.href = "";
+}
+
+let underline = document.querySelector("#underline");
+pop.setAttribute("onmouseover", "underLineIn()");
+pop.setAttribute("onmouseout", "underLineOut()");
+ulous.setAttribute("onmouseover", "underLineIn()");
+ulous.setAttribute("onmouseout", "underLineOut()");
+let countryOne = document.querySelector("#countryOne");
+let underlineOne = document.querySelector("#underlineOne");
+countryOne.setAttribute("onmouseover", "underLineOneIn()");
+countryOne.setAttribute("onmouseout", "underLineOneOut()");
+let countryTwo = document.querySelector("#countryTwo");
+let underlineTwo = document.querySelector("#underlineTwo");
+countryTwo.setAttribute("onmouseover", "underLineTwoIn()");
+countryTwo.setAttribute("onmouseout", "underLineTwoOut()");
+
+function underLineIn() {
+  let underline = document.querySelector("#underline");
+  underline.style.transition = "transform 920ms ease-in-out";
+  underline.style.transform = "scalex(1)";
+}
+
+function underLineOut() {
+  let underline = document.querySelector("#underline");
+  underline.style.transition = "transform 380ms ease-in-out";
+  underline.style.transform = "scalex(0)";
+}
+
+function underLineOneIn() {
+  let underlineOne = document.querySelector("#underlineOne");
+  underlineOne.style.transition = "transform 920ms ease-in-out";
+  underlineOne.style.transform = "scalex(1)";
+}
+
+function underLineOneOut() {
+  let underlineOne = document.querySelector("#underlineOne");
+  underlineOne.style.transition = "transform 380ms ease-in-out";
+  underlineOne.style.transform = "scalex(0)";
+}
+
+function underLineTwoIn() {
+  let underlineTwo = document.querySelector("#underlineTwo");
+  underlineTwo.style.transition = "transform 920ms ease-in-out";
+  underlineTwo.style.transform = "scalex(1)";
+}
+
+function underLineTwoOut() {
+  let underlineTwo = document.querySelector("#underlineTwo");
+  underlineTwo.style.transition = "transform 380ms ease-in-out";
+  underlineTwo.style.transform = "scalex(0)";
+}
+
+
+
+
+
+let countryChoice = Math.floor(Math.random() * 3)+1;
+let populationOne = document.querySelector("#populationOne");
+
+function country(countryName, population) {
+  this.country = countryName;
+  this.population = population;
+  
+}
+
+const China = new country('China', 1425887337)
+
+const one = {
+  country: "China",
+  population: 1425887337
+  
+};
+
+const two = {
+  country: "Egypt",
+  population: 110990103
+  
+};
+
+const three = {
+  country: "Equador",
+  population: 18001000
+  
+};
+
+if(countryChoice === 1) {
+  countryOne.innerHTML = one.country;
+  populationOne.innerHTML = one.population;
+} else if(countryChoice === 2) {
+  countryOne.innerHTML = two.country;
+  populationOne.innerHTML = two.population;
+} else {
+  countryOne.innerHTML = three.country;
+  populationOne.innerHTML = three.population;
+}
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
