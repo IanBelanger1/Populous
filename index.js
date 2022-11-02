@@ -109,13 +109,11 @@ const one = {
 const two = {
   country: "Egypt",
   population: 110990103
-  
 };
 
 const three = {
   country: "Equador",
   population: 18001000
-  
 };
 
 if(countryChoice === 1) {
